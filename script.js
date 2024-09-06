@@ -66,7 +66,7 @@ function submitAnswer() {
             <td>${foundItem.role}</td>
             <td>${foundItem.company}</td>
             <td>${foundItem.album}</td>
-            <td>${foundItem.birthday}</td>
+            <td>${foundItem.debutyear}</td>
         `;
 
         // Append the new row at the end of the table body
@@ -84,7 +84,7 @@ function resetGame() {
         <th>Role</th>
         <th>Company</th>
         <th>Album</th>
-        <th>Birthday</th>
+        <th>Debutyear</th>
     </tr>
 `;
 }

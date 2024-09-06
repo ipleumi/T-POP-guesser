@@ -1,38 +1,38 @@
 [
     {
-        "name": "krit",
+        "name": "Krit",
         "group": "threemandown",
         "role": "singer",
         "company": "genelab",
         "album": "2",
-        "birthday": "09-09",
+        "debutyear": "2016",
         " gender": "male"
     },
     {
-        "name": "toon",
+        "name": "Toon",
         "group": "threemandown",
         "role": "guitar",
         "company": "genelab",
         "album": "2",
-        "birthday": "07-03",
+        "debutyear": "2016",
         " gender": "male"
     },
     {
-        "name": "tae",
+        "name": "Tae",
         "group": "threemandown",
         "role": "drum",
         "company": "genelab",
         "album": "2",
-        "birthday": "20-09",
+        "debutyear": "2016",
         " gender": "male"
     },
     {
-        "name": "seng",
+        "name": "Seng",
         "group": "threemandown",
         "role": "keyboard",
         "company": "genelab",
         "album": "2",
-        "birthday": "09-07",
+        "debutyear": "2016",
         " gender": "male"
     }
 ]
