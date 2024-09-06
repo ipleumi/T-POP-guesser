@@ -7,7 +7,28 @@
     <title>T-POP GUESSER</title>
 </head>
 <body>
-    
+    <script src="script.js"> displayDataInTable()</script>
+
+    <div id="tutorialModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>How to Play</h2>
+            <p>Game Rules: <br>
+                Welcome to T-POP GUESSER! The rules are simple:
+                
+                Guess the correct idol based on information gained.
+                You have 10 guesses to guess it correctly.
+                After searching for an idol, click the "Guess" button to submit your guess.
+                If you guess correctly, you win!
+                If you run out of guesses, you lose.
+                A green colored section means that the information is correct.
+                A yellow colored section means that the information is within the range of 2.
+                Enjoy the game and have fun! Tap on screen to continue. <br><br>
+                
+                Developer's Note: An idol's Role may be inaccurate.</p>
+        </div>
+    </div> 
+
         <div class="menubox">
             <div class="content">
 
@@ -21,7 +42,8 @@
 
                 <div class="menu">
                     <div class="menu-row">
-                        <button type="button" class="tutorial">tutorial</button> <button type="button" class="replay">replay</button><p>Guesses Left : <span class="try">10</span></p>
+                        <button type="button"  class="turorial" onclick="showTutorial()">tutorial</button>
+                        <button type="button" class="replay" onclick="resetGame()">replay</button><p>Guesses Left : <span class="try">10</span></p>
                     </div>
                     
                     <span class="gender"></span><button type="button" class="hint">show gender </button>
@@ -31,11 +53,12 @@
 
 
         <div class="answerbox">
-
             <div class="answer">
-                <input type="text" class="answer-input" placeholder="Enter Name Here...">
+                <input type="text" class="answer-input" placeholder="Enter Name Here..." oninput="searchName()">
+                <div class="search-results"></div>
+                <button type="button" class="submit-answer" onclick="submitAnswer()">Submit</button>
             </div>
-
+            <p class="answer-message"></p>
         </div>
 
         <div class="table header">
@@ -46,17 +69,12 @@
                     <th>GROUP</th>
                     <th>ROLE</th>
                     <th>COMPANY</th>
-                    <th>HEIGHT</th>
-                    <th>BIRTH YEAR</th>
+                    <th>ALBUM</th>
+                    <th>BIRTH DAY(day-month)</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Player1</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                </tr>
+                
+
+
             </table>    
 
         </div>
