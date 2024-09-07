@@ -110,11 +110,48 @@ function submitAnswer() {
     isGameOver();
 }
 
-//create function to check if the game is over
+// Function to check if the game is over
 function isGameOver() {
     if (guessesLeft === 0) {
-        document.querySelector('.result').textContent = `Game Over! The correct answer is ${answer}.`;
+        if (document.querySelector('.result').textContent === 'Correct!') {
+            showPopup('win');
+        } else {
+            showPopup('lose');
+        }
         resetGame();
+    }
+}
+
+// Function to show a popup with the result
+function showPopup(result) {
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+    const timeTaken = 10 - guessesLeft; // Calculate the number of guesses taken
+
+    if (result === 'win') {
+        popup.innerHTML = `
+            <h2>Congratulations!</h2>
+            <p>You guessed the correct answer: ${answer}</p>
+            <p>It took you ${timeTaken} guesses.</p>
+            <button onclick="closePopup()">Close</button>
+        `;
+    } else {
+        popup.innerHTML = `
+            <h2>Game Over!</h2>
+            <p>The correct answer was: ${answer}</p>
+            <p>You used all your guesses.</p>
+            <button onclick="closePopup()">Close</button>
+        `;
+    }
+
+    document.body.appendChild(popup);
+}
+
+// Function to close the popup
+function closePopup() {
+    const popup = document.querySelector('.popup');
+    if (popup) {
+        popup.remove();
     }
 }
 
@@ -125,8 +162,12 @@ function checkAnswer(guessedName) {
 
     if (guessedItem && guessedItem.name.toLowerCase() === answer.toLowerCase()) {
         document.querySelector('.result').textContent = 'Correct!';
+        showPopup('win');
     } else {
         document.querySelector('.result').textContent = 'Incorrect! Try again.';
+        guessesLeft--;
+        updateGuessesLeft();
+        isGameOver();
     }
 
     const tableRows = document.querySelectorAll('table tbody tr');
@@ -192,9 +233,9 @@ function resetGame() {
     // Randomize the name and display
     answer = randomizeName();
 
-    // Clear the result message
+    // clear the result message
     document.querySelector('.result').textContent = '';
-    
+
 }
 
 // Show tutorial
