@@ -1,38 +1,129 @@
 [
     {
         "name": "Krit",
-        "group": "threemandown",
-        "role": "singer",
+        "group": "Threemandown",
+        "role": ["singer","guitar"],
         "company": "genelab",
         "album": "2",
         "debutyear": "2016",
-        " gender": "male"
+        "gender": "male"
     },
     {
         "name": "Toon",
-        "group": "threemandown",
+        "group": "Threemandown",
         "role": "guitar",
         "company": "genelab",
         "album": "2",
         "debutyear": "2016",
-        " gender": "male"
+        "gender": "male"
     },
     {
         "name": "Tae",
-        "group": "threemandown",
+        "group": "Threemandown",
         "role": "drum",
         "company": "genelab",
         "album": "2",
         "debutyear": "2016",
-        " gender": "male"
+        "gender": "male"
     },
     {
         "name": "Seng",
-        "group": "threemandown",
+        "group": "Threemandown",
         "role": "keyboard",
         "company": "genelab",
         "album": "2",
         "debutyear": "2016",
-        " gender": "male"
+        "gender": "male"
+    }
+    ,
+    {
+        "name": "Mabelz",
+        "group": "PiXXiE",
+        "role": ["vocal","visual"],
+        "company": "LIT Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender": "female"
+    },
+    {
+        "name": "Pimma",
+        "group": "PiXXiE",
+        "role": ["rapper","dancer"],
+        "company": "LIT Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender": "female"
+    },
+    {
+        "name": "Ingkho",
+        "group": "PiXXiE",
+        "role": "vocal",
+        "company": "LIT Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender": "female"
+    },
+    {
+        "name": "Fai",
+        "group": "4EVE",
+        "role": "dancer",
+        "company": "XOXO Entertainment",
+        "album": "4",
+        "debutyear": "2020",
+        "gender": "female"
+    },
+    {
+        "name": "Punch",
+        "group": "4EVE",
+        "role": ["dancer","rapper"],
+        "company": "XOXO Entertainment",
+        "album": "4",
+        "debutyear": "2020",
+        "gender": "female"
+    },
+    {
+        "name": "Mind",
+        "group": "4EVE",
+        "role": "vocal",
+        "company": "XOXO Entertainment",
+        "album": "4",
+        "debutyear": "2020",
+        "gender": "female"
+    },
+    {
+        "name": "Aheye",
+       "group": "4EVE",
+        "role": "vocal",
+        "company": "XOXO Entertainment",
+        "album": "4",
+        "debutyear": "2020",
+        "gender": "female"
+    },
+    {
+        "name": "Hannah",
+        "group": "4EVE",
+        "role": "vocal",
+        "company": "XOXO Entertainment",
+        "album": "4",
+        "debutyear": "2020",
+        "gender": "female"
+    },
+    {
+        "name": "Jorin",
+        "group": "4EVE",
+        "role": ["vocal","dancer"],
+        "company": "XOXO Entertainment",
+        "album": "4",
+        "debutyear": "2020",
+        "gender": "female"
+    },
+    {
+        "name": "Taaom",
+        "group": "4EVE",
+        "role": ["vocal","dancer"],
+        "company": "XOXO Entertainment",
+        "album": "4",
+        "debutyear": "2020",
+        "gender": "female"
     }
 ]
