@@ -1,16 +1,16 @@
-// Show tutorial
-function showTutorial() {
-    document.getElementById('tutorialModal').style.display = 'block';
-}
-
-// Close tutorial
-function closeTutorial() {
-    document.getElementById('tutorialModal').style.display = 'none';
-}
-
 let guessesLeft = 10; // Initialize the number of guesses
 let data = []; // Initialize the data variable
 let selectedNames = []; // Initialize the list of selected names
+let answer = ''; // Initialize the answer variable
+
+
+// Function to randomize the name from data
+function randomizeName() {
+    const randomIndex = Math.floor(Math.random() * data.length);
+    const randomName = data[randomIndex].name;
+    answer = randomName;
+    return randomName;
+}
 
 // Function to update the number of guesses left
 function updateGuessesLeft() {
@@ -22,11 +22,12 @@ fetch('db.json')
     .then(response => response.json())
     .then(fetchedData => {
         data = fetchedData; // Store fetched data in the data variable
-        localStorage.setItem('data', JSON.stringify(data));
+        answer = randomizeName(); // Randomize the name after data is fetched
         // Initialize the number of guesses left on page load
         document.addEventListener('DOMContentLoaded', () => {
             updateGuessesLeft();
             displayDataInTable();
+            document.querySelector('.close').addEventListener('click', closeTutorial); // Move this line inside DOMContentLoaded
         });
     });
 
@@ -42,6 +43,7 @@ function displayDataInTable() {
             <td>${item.company}</td>
             <td>${item.album}</td>
             <td>${item.debutyear}</td>
+            <td>${item.gender}</td>
         `;
         tableBody.appendChild(row);
     });
@@ -86,6 +88,7 @@ function submitAnswer() {
             <td>${foundItem.company}</td>
             <td>${foundItem.album}</td>
             <td>${foundItem.debutyear}</td>
+            <td>${foundItem.gender}</td>
         `;
 
         // Append the new row at the end of the table body
@@ -102,7 +105,65 @@ function submitAnswer() {
     // Decrease the number of guesses left and update the display
     guessesLeft--;
     updateGuessesLeft();
+    
+    checkAnswer(answerInput);
+    isGameOver();
 }
+
+//create function to check if the game is over
+function isGameOver() {
+    if (guessesLeft === 0) {
+        document.querySelector('.result').textContent = `Game Over! The correct answer is ${answer}.`;
+        resetGame();
+    }
+}
+
+//create funtion to  check if the guessed name is correct
+function checkAnswer(guessedName) {
+    const guessedItem = data.find(item => item.name.toLowerCase() === guessedName.toLowerCase());
+    const answerItem = data.find(item => item.name.toLowerCase() === answer.toLowerCase());
+
+    if (guessedItem && guessedItem.name.toLowerCase() === answer.toLowerCase()) {
+        document.querySelector('.result').textContent = 'Correct!';
+    } else {
+        document.querySelector('.result').textContent = 'Incorrect! Try again.';
+    }
+
+    const tableRows = document.querySelectorAll('table tbody tr');
+    tableRows.forEach(row => {
+        const nameCell = row.querySelector('td:first-child');
+        const groupCell = row.querySelector('td:nth-child(2)'); // Select the group cell
+        const companyCell = row.querySelector('td:nth-child(4)'); // Select the company cell
+        const genderCell = row.querySelector('td:nth-child(7)'); // Select the gender cell
+
+        if (nameCell && nameCell.textContent.toLowerCase() === guessedName.toLowerCase()) {
+            if (guessedItem.name.toLowerCase() === answerItem.name.toLowerCase()) {
+                nameCell.style.backgroundColor = '#1ff800'; // Change only the name cell's background color
+            } else {
+                nameCell.style.backgroundColor = ''; // Reset the name cell's background color
+            }
+
+            if (guessedItem.group.toLowerCase() === answerItem.group.toLowerCase()) {
+                groupCell.style.backgroundColor = '#1ff800'; // Change only the group cell's background color
+            } else {
+                groupCell.style.backgroundColor = ''; // Reset the group cell's background color
+            }
+
+            if (guessedItem.company.toLowerCase() === answerItem.company.toLowerCase()) {
+                companyCell.style.backgroundColor = '#1ff800'; // Change only the company cell's background color
+            } else {
+                companyCell.style.backgroundColor = ''; // Reset the company cell's background color
+            }
+
+            if (guessedItem.gender.toLowerCase() === answerItem.gender.toLowerCase()) {
+                genderCell.style.backgroundColor = '#1ff800'; // Change only the gender cell's background color
+            } else {
+                genderCell.style.backgroundColor = ''; // Reset the gender cell's background color
+            }
+        }
+    });
+}
+
 
 // Function to reset the game
 function resetGame() {
@@ -117,6 +178,7 @@ function resetGame() {
             <th>Company</th>
             <th>Album</th>
             <th>Debut Year</th>
+            <th>GENDER</th>
         </tr>
     `;
 
@@ -126,10 +188,22 @@ function resetGame() {
 
     // Clear the list of selected names
     selectedNames = [];
+
+    // Randomize the name and display
+    answer = randomizeName();
+
+    // Clear the result message
+    document.querySelector('.result').textContent = '';
+    
 }
 
-// Initialize the number of guesses left on page load
-document.addEventListener('DOMContentLoaded', () => {
-    updateGuessesLeft();
-    displayDataInTable();
-});
+// Show tutorial
+function showTutorial() {
+    document.getElementById('tutorialModal').style.display = 'block';
+    document.querySelector('.close').addEventListener('click', closeTutorial); // Add this line to ensure the event listener is added
+}
+
+// Close tutorial
+function closeTutorial() {
+    document.getElementById('tutorialModal').style.display = 'none';
+}

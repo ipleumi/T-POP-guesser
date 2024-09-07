@@ -42,16 +42,13 @@
 
                 <div class="menu">
                     <div class="menu-row">
-                        <button type="button"  class="turorial" onclick="showTutorial()">tutorial</button>
+                        <button type="button" class="tutorial" onclick="showTutorial()">tutorial</button>
                         <button type="button" class="replay" onclick="resetGame()">replay</button><p>Guesses Left : <span id="try">10</span></p>
                     </div>
-                    
-                    <span class="gender"></span><button type="button" class="hint">show gender </button>
                 </div>
             </div>
         </div>
-
-
+        
         <div class="answerbox">
             <div class="answer">
                 <input type="text" class="answer-input" placeholder="Enter Name Here..." oninput="searchName()">
@@ -59,8 +56,9 @@
                 <button type="button" class="submit-answer" onclick="submitAnswer()">Guess</button>
             </div>
             <p class="answer-message"></p>
-        </div>
 
+        </div>
+        <div class="result"></div>
         <div class="table header">
             
             <table>
@@ -71,10 +69,11 @@
                     <th>COMPANY</th>
                     <th>ALBUM</th>
                     <th>DEBUT YEAR</th>
+                    <th>GENDER</th>
                 </tr>
-                
-
-
+                <tbody>
+                    
+                </tbody>
             </table>    
 
         </div>
