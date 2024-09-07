@@ -3,7 +3,6 @@ let data = []; // Initialize the data variable
 let selectedNames = []; // Initialize the list of selected names
 let answer = ''; // Initialize the answer variable
 
-
 // Function to randomize the name from data
 function randomizeName() {
     const randomIndex = Math.floor(Math.random() * data.length);
@@ -23,6 +22,7 @@ fetch('db.json')
     .then(fetchedData => {
         data = fetchedData; // Store fetched data in the data variable
         answer = randomizeName(); // Randomize the name after data is fetched
+        showTutorial(); // Show the tutorial after data is fetched
         // Initialize the number of guesses left on page load
         document.addEventListener('DOMContentLoaded', () => {
             updateGuessesLeft();
@@ -105,7 +105,6 @@ function submitAnswer() {
     // Decrease the number of guesses left and update the display
     guessesLeft--;
     updateGuessesLeft();
-    
     checkAnswer(answerInput);
     isGameOver();
 }
@@ -132,7 +131,7 @@ function showPopup(result) {
         popup.innerHTML = `
             <h2>Congratulations!</h2>
             <p>You guessed the correct answer: ${answer}</p>
-            <p>It took you ${timeTaken} guesses.</p>
+            <p>You use ${timeTaken} guesses.</p>
             <button onclick="closePopup()">Close</button>
         `;
     } else {
@@ -155,7 +154,7 @@ function closePopup() {
     }
 }
 
-//create funtion to  check if the guessed name is correct
+//create function to  check if the guessed name is correct
 function checkAnswer(guessedName) {
     const guessedItem = data.find(item => item.name.toLowerCase() === guessedName.toLowerCase());
     const answerItem = data.find(item => item.name.toLowerCase() === answer.toLowerCase());
@@ -172,39 +171,80 @@ function checkAnswer(guessedName) {
 
     const tableRows = document.querySelectorAll('table tbody tr');
     tableRows.forEach(row => {
-        const nameCell = row.querySelector('td:first-child');
-        const groupCell = row.querySelector('td:nth-child(2)'); // Select the group cell
-        const companyCell = row.querySelector('td:nth-child(4)'); // Select the company cell
-        const genderCell = row.querySelector('td:nth-child(7)'); // Select the gender cell
+    const nameCell = row.querySelector('td:first-child');
+    const groupCell = row.querySelector('td:nth-child(2)');
+    const roleCell = row.querySelector('td:nth-child(3)');
+    const companyCell = row.querySelector('td:nth-child(4)');
+    const albumCell = row.querySelector('td:nth-child(5)');
+    const debutYearCell = row.querySelector('td:nth-child(6)');
+    const genderCell = row.querySelector('td:nth-child(7)');
 
-        if (nameCell && nameCell.textContent.toLowerCase() === guessedName.toLowerCase()) {
-            if (guessedItem.name.toLowerCase() === answerItem.name.toLowerCase()) {
-                nameCell.style.backgroundColor = '#1ff800'; // Change only the name cell's background color
-            } else {
-                nameCell.style.backgroundColor = ''; // Reset the name cell's background color
-            }
-
-            if (guessedItem.group.toLowerCase() === answerItem.group.toLowerCase()) {
-                groupCell.style.backgroundColor = '#1ff800'; // Change only the group cell's background color
-            } else {
-                groupCell.style.backgroundColor = ''; // Reset the group cell's background color
-            }
-
-            if (guessedItem.company.toLowerCase() === answerItem.company.toLowerCase()) {
-                companyCell.style.backgroundColor = '#1ff800'; // Change only the company cell's background color
-            } else {
-                companyCell.style.backgroundColor = ''; // Reset the company cell's background color
-            }
-
-            if (guessedItem.gender.toLowerCase() === answerItem.gender.toLowerCase()) {
-                genderCell.style.backgroundColor = '#1ff800'; // Change only the gender cell's background color
-            } else {
-                genderCell.style.backgroundColor = ''; // Reset the gender cell's background color
-            }
+    if (nameCell && nameCell.textContent.toLowerCase() === guessedName.toLowerCase()) {
+        if (guessedItem.name.toLowerCase() === answerItem.name.toLowerCase()) {
+            nameCell.style.backgroundColor = '#1ff800'; // Change only the name cell's background color
+        } else {
+            nameCell.style.backgroundColor = ''; // Reset the name cell's background color
         }
-    });
-}
 
+        if (guessedItem.group.toLowerCase() === answerItem.group.toLowerCase()) {
+            groupCell.style.backgroundColor = '#1ff800'; // Change only the group cell's background color
+        } else {
+            groupCell.style.backgroundColor = ''; // Reset the group cell's background color
+        }
+
+        if (guessedItem.company.toLowerCase() === answerItem.company.toLowerCase()) {
+            companyCell.style.backgroundColor = '#1ff800'; // Change only the company cell's background color
+        } else {
+            companyCell.style.backgroundColor = ''; // Reset the company cell's background color
+        }
+
+        if (guessedItem.gender.toLowerCase() === answerItem.gender.toLowerCase()) {
+            genderCell.style.backgroundColor = '#1ff800'; // Change only the gender cell's background color
+        } else {
+            genderCell.style.backgroundColor = ''; // Reset the gender cell's background color
+        }
+
+        const guessedAlbumCount = parseInt(guessedItem.album);
+        const answerAlbumCount = parseInt(answerItem.album);
+
+        if (guessedAlbumCount === answerAlbumCount) {
+            albumCell.style.backgroundColor = '#1ff800'; // Change only the album cell's background color to green if correct
+        } else if (Math.abs(guessedAlbumCount - answerAlbumCount) <= 2) {
+            albumCell.style.backgroundColor = 'yellow'; // Change only the album cell's background color to yellow if within range
+        } else {
+            albumCell.style.backgroundColor = ''; // Reset the album cell's background color
+        }
+
+        const guessedDebutYear = parseInt(guessedItem.debutyear);
+        const answerDebutYear = parseInt(answerItem.debutyear);
+
+        if (guessedDebutYear === answerDebutYear) {
+            debutYearCell.style.backgroundColor = '#1ff800'; // Change only the debut year cell's background color to green if correct
+        } else if (Math.abs(guessedDebutYear - answerDebutYear) <= 2) {
+            debutYearCell.style.backgroundColor = 'yellow'; // Change only the debut year cell's background color to yellow if within range
+        } else {
+            debutYearCell.style.backgroundColor = ''; // Reset the debut year cell's background color
+        }
+
+        // Check if the guessed role is correct
+        //check the role cell has part of the answer role
+        if (guessedItem.role.toLowerCase() === answerItem.role.toLowerCase()){
+            roleCell.style.backgroundColor = '#1ff800'; // Change only the role cell's background color
+        }    
+        //check the role cell has the same role as the answer role
+        else if(guessedItem.role.toLowerCase().includes(answerItem.role.toLowerCase())){
+            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+        }
+        else if(answerItem.role.toLowerCase().includes(guessedItem.role.toLowerCase())){
+            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+        }
+        else {
+            roleCell.style.backgroundColor = ''; // Reset the role cell's background color
+        }  
+    }
+});
+
+}
 
 // Function to reset the game
 function resetGame() {
@@ -235,7 +275,6 @@ function resetGame() {
 
     // clear the result message
     document.querySelector('.result').textContent = '';
-
 }
 
 // Show tutorial

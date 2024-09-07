@@ -221,7 +221,8 @@ tr:hover {
 }
 
 .submit-answer:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #1ff800; /* Darker green on hover */
+    color: black; /* Black text on hover */
 }
 
 /* Styles for the popup */

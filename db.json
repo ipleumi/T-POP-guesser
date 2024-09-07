@@ -2,7 +2,7 @@
     {
         "name": "Krit",
         "group": "Threemandown",
-        "role": ["singer","guitar"],
+        "role": ["singer", "guitar"],
         "company": "genelab",
         "album": "2",
         "debutyear": "2016",
@@ -34,12 +34,11 @@
         "album": "2",
         "debutyear": "2016",
         "gender": "male"
-    }
-    ,
+    },
     {
         "name": "Mabelz",
         "group": "PiXXiE",
-        "role": ["vocal","visual"],
+        "role": ["vocal", "visual"],
         "company": "LIT Entertainment",
         "album": "2",
         "debutyear": "2021",
@@ -48,7 +47,7 @@
     {
         "name": "Pimma",
         "group": "PiXXiE",
-        "role": ["rapper","dancer"],
+        "role": ["rapper", "dancer"],
         "company": "LIT Entertainment",
         "album": "2",
         "debutyear": "2021",
@@ -75,7 +74,7 @@
     {
         "name": "Punch",
         "group": "4EVE",
-        "role": ["dancer","rapper"],
+        "role": ["dancer", "rapper"],
         "company": "XOXO Entertainment",
         "album": "4",
         "debutyear": "2020",
@@ -111,7 +110,7 @@
     {
         "name": "Jorin",
         "group": "4EVE",
-        "role": ["vocal","dancer"],
+        "role": ["vocal", "dancer"],
         "company": "XOXO Entertainment",
         "album": "4",
         "debutyear": "2020",
@@ -120,10 +119,36 @@
     {
         "name": "Taaom",
         "group": "4EVE",
-        "role": ["vocal","dancer"],
+        "role": ["vocal", "dancer"],
         "company": "XOXO Entertainment",
         "album": "4",
         "debutyear": "2020",
         "gender": "female"
+    },
+    {
+        "name": "Billy",
+        "group": "TillyBirds",
+        "role": ["guitar", "keyboard"],
+        "company": "genelab",
+        "album": "3",
+        "debutyear": "2019",
+        "gender": "male"
+    },{
+        "name": "Third",
+        "group": "TillyBirds",
+        "role": "singer",
+        "company": "genelab",
+        "album": "3",
+        "debutyear": "2019",
+        "gender":"male"
+    },
+    {
+        "name": "Milo",
+        "group": "TillyBirds",
+        "role": "drum",
+        "company": "genelab",
+        "album": "3",
+        "debutyear": "2019",
+        "gender":"male"
     }
 ]
