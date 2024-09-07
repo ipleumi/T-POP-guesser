@@ -7,22 +7,22 @@
     <title>T-POP GUESSER</title>
 </head>
 <body>
-    <script src="script.js"> displayDataInTable()</script>
+    <script src="script.js"></script>
 
     <div id="tutorialModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span onclick="closeTutorial()" class="close">close</span>
             <h2>How to Play</h2>
             <p>Game Rules: <br>
                 Welcome to T-POP GUESSER! The rules are simple:
                 
-                Guess the correct idol based on information gained.
-                You have 10 guesses to guess it correctly.
-                After searching for an idol, click the "Guess" button to submit your guess.
-                If you guess correctly, you win!
-                If you run out of guesses, you lose.
-                A green colored section means that the information is correct.
-                A yellow colored section means that the information is within the range of 2.
+                Guess the correct idol based on information gained.<br>
+                You have 10 guesses to guess it correctly.<br>
+                After searching for an idol, click the "Guess" button to submit your guess.<br>
+                If you guess correctly, you win!<br>
+                If you run out of guesses, you lose.<br>
+                A green colored section means that the information is correct.<br>
+                A yellow colored section means that the information is within the range of 2 or have partial correct.<br>
                 Enjoy the game and have fun! Tap on screen to continue. <br><br>
                 
                 Developer's Note: An idol's Role may be inaccurate.</p>
@@ -43,7 +43,7 @@
                 <div class="menu">
                     <div class="menu-row">
                         <button type="button"  class="turorial" onclick="showTutorial()">tutorial</button>
-                        <button type="button" class="replay" onclick="resetGame()">replay</button><p>Guesses Left : <span class="try">10</span></p>
+                        <button type="button" class="replay" onclick="resetGame()">replay</button><p>Guesses Left : <span id="try">10</span></p>
                     </div>
                     
                     <span class="gender"></span><button type="button" class="hint">show gender </button>

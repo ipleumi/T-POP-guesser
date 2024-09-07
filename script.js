@@ -1,34 +1,50 @@
+// Show tutorial
+function showTutorial() {
+    document.getElementById('tutorialModal').style.display = 'block';
+}
+
+// Close tutorial
+function closeTutorial() {
+    document.getElementById('tutorialModal').style.display = 'none';
+}
+
+let guessesLeft = 10; // Initialize the number of guesses
+let data = []; // Initialize the data variable
+let selectedNames = []; // Initialize the list of selected names
+
+// Function to update the number of guesses left
+function updateGuessesLeft() {
+    document.getElementById('try').textContent = guessesLeft;
+}
+
 // Fetch JSON file and store in local storage
 fetch('db.json')
     .then(response => response.json())
-    .then(data => {
-        // Store data in local storage
+    .then(fetchedData => {
+        data = fetchedData; // Store fetched data in the data variable
         localStorage.setItem('data', JSON.stringify(data));
-        // Display data in table
-        displayDataInTable();
+        // Initialize the number of guesses left on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateGuessesLeft();
+            displayDataInTable();
+        });
     });
 
-// Get data from local storage
-const data = JSON.parse(localStorage.getItem('data'));
-
-// Function to show the tutorial modal
-function showTutorial() {
-    const modal = document.getElementById('tutorialModal');
-    const span = document.getElementsByClassName('close')[0];
-
-    modal.style.display = 'block';
-
-    // Close the modal when the user clicks on <span> (x)
-    span.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    // Close the modal when the user clicks anywhere outside of the modal
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
+// Function to display data in table
+function displayDataInTable() {
+    const tableBody = document.querySelector('table tbody');
+    data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.group}</td>
+            <td>${item.role}</td>
+            <td>${item.company}</td>
+            <td>${item.album}</td>
+            <td>${item.debutyear}</td>
+        `;
+        tableBody.appendChild(row);
+    });
 }
 
 // Function to search for names
@@ -38,7 +54,9 @@ function searchName() {
     searchResults.innerHTML = '';
 
     if (searchInput) {
-        const matches = data.filter(item => item.name.toLowerCase().includes(searchInput));
+        const matches = data.filter(item => 
+            item.name.toLowerCase().includes(searchInput) && !selectedNames.includes(item.name)
+        );
         matches.forEach(match => {
             const div = document.createElement('div');
             div.innerHTML = `<strong>${match.name}</strong> - ${match.group}`;
@@ -51,6 +69,7 @@ function searchName() {
         });
     }
 }
+
 // Function to submit the answer and display the details in the table
 function submitAnswer() {
     const answerInput = document.querySelector('.answer-input').value.trim().toLowerCase();
@@ -71,20 +90,46 @@ function submitAnswer() {
 
         // Append the new row at the end of the table body
         tableBody.appendChild(row);
+
+        // Add the selected name to the list of selected names
+        selectedNames.push(foundItem.name);
     }
+
+    // Clear the search input box and search results
+    document.querySelector('.answer-input').value = '';
+    document.querySelector('.search-results').innerHTML = '';
+
+    // Decrease the number of guesses left and update the display
+    guessesLeft--;
+    updateGuessesLeft();
 }
+
 // Function to reset the game
 function resetGame() {
     document.querySelector('.answer-input').value = '';
     document.querySelector('.answer-message').textContent = '';
-    document.querySelector('table tbody').innerHTML = `
-    <tr>
-        <th>Name</th>
-        <th>Group</th>
-        <th>Role</th>
-        <th>Company</th>
-        <th>Album</th>
-        <th>Debutyear</th>
-    </tr>
-`;
+    const tableBody = document.querySelector('table tbody');
+    tableBody.innerHTML = `
+        <tr>
+            <th>Name</th>
+            <th>Group</th>
+            <th>Role</th>
+            <th>Company</th>
+            <th>Album</th>
+            <th>Debut Year</th>
+        </tr>
+    `;
+
+    // Reset the number of guesses left and update the display
+    guessesLeft = 10;
+    updateGuessesLeft();
+
+    // Clear the list of selected names
+    selectedNames = [];
 }
+
+// Initialize the number of guesses left on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateGuessesLeft();
+    displayDataInTable();
+});
