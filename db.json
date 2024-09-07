@@ -119,7 +119,7 @@
     {
         "name": "Taaom",
         "group": "4EVE",
-        "role": ["vocal", "dancer"],
+        "role": ["vocal","dancer"],
         "company": "XOXO Entertainment",
         "album": "4",
         "debutyear": "2020",
@@ -128,7 +128,7 @@
     {
         "name": "Billy",
         "group": "TillyBirds",
-        "role": ["guitar", "keyboard"],
+        "role": ["guitar","keyboard"],
         "company": "genelab",
         "album": "3",
         "debutyear": "2019",
@@ -150,5 +150,50 @@
         "album": "3",
         "debutyear": "2019",
         "gender":"male"
+    },{
+        "name": "Fond",
+        "group": "Qrra",
+        "role": ["vocal","dancer"],
+        "company": "Independent Records",
+        "album": "1",
+        "debutyear": "2020",
+        "gender": "female"
+    },
+
+{
+        "name": "Chanya",
+        "group": "Qrra",
+        "role": ["vocal","dancer"],
+        "company": "Independent Records",
+        "album": "1",
+        "debutyear": "2020",
+        "gender": "female"
+    },
+{
+        "name": "Niky",
+        "group": "Qrra",
+        "role": ["vocal","dancer"],
+        "company": "Independent Records",
+        "album": "1",
+        "debutyear": "2020",
+        "gender": "female"
+    },
+{
+        "name": "Popper",
+        "group": "Qrra",
+        "role": ["vocal","dancer"],
+        "company": "Independent Records",
+        "album": "1",
+        "debutyear": "2022",
+        "gender": "female"
+    },
+{
+        "name": "Paeyah",
+        "group": "Qrra",
+        "role": ["vocal","dancer"],
+        "company": "Independent Records",
+        "album": "1",
+        "debutyear": "2022",
+        "gender": "female"
     }
 ]
