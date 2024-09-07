@@ -165,7 +165,7 @@ function checkAnswer(guessedName) {
         showPopup('win');
     } else {
         document.querySelector('.result').textContent = 'Incorrect! Try again.';
-        guessesLeft--;
+        
         updateGuessesLeft();
         isGameOver();
     }
