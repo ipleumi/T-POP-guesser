@@ -66,6 +66,7 @@ function searchName() {
             div.onclick = () => {
                 document.querySelector('.answer-input').value = match.name;
                 searchResults.innerHTML = '';
+                validateInput(); // Call validateInput to enable/disable the Guess button
             };
             searchResults.appendChild(div);
         });
@@ -305,6 +306,7 @@ function resetGame() {
 
     // clear the result message
     document.querySelector('.result').textContent = '';
+    generateInfoContent()
 }
 
 // Show tutorial
@@ -323,9 +325,17 @@ function closeInfoModal() {
     document.getElementById('infoModal').style.display = 'none';
 }
 
-//open info modal
+// Open info modal
 function openInfoModal() {
     document.getElementById('infoModal').style.display = 'block';
+}
+
+// Function to validate the input
+function validateInput() {
+    const answerInput = document.querySelector('.answer-input').value.trim().toLowerCase();
+    const guessButton = document.querySelector('.submit-answer');
+    const isValid = answerInput && data.some(item => item.name.toLowerCase() === answerInput);
+    guessButton.disabled = !isValid; // Disable button if input is invalid or empty
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -333,6 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const infoModal = document.getElementById('infoModal');
     const closeModal = document.querySelector('.modal .close');
     const infoContent = document.getElementById('infoContent');
+    const answerInput = document.querySelector('.answer-input');
 
     infoButton.addEventListener('click', () => {
         // Populate the modal with all information
@@ -350,6 +361,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Add input event listener to validate input
+    answerInput.addEventListener('input', validateInput);
+
+    // Initial validation
+    validateInput();
+});
+
     function generateInfoContent() {
         let content = `genelab: <br>
             Threemandown , TillyBirds <br>
@@ -360,13 +378,16 @@ document.addEventListener('DOMContentLoaded', () => {
             XOXO Entertainment: <br>
             4EVE , ATLAS<br>
             <br>
-            Independent Record: <br>
+            Independent Records: <br>
             Qrra<br>
             <br>
             Sonray Music: <br>
             BUS5 , BUS7<br>
             <br>
+            Rising Entertainment: <br>
+            Empress <br>
+            <br>
         `;
         return content;
+
     }
-});

@@ -366,5 +366,59 @@
         "album": "2",
         "debutyear": "2021",
         "gender":"male"
+    },
+    {
+        "name": "Belle",
+        "group": "Empress",
+        "role": "rap,dancer",
+        "company": "Rising Entertainment",
+        "album": "0",
+        "debutyear": "2023",
+        "gender": "female"
+    },
+{
+        "name": "Jackpot",
+        "group": "Empress",
+        "role": "rap",
+        "company": "Rising Entertainment",
+        "album": "0",
+        "debutyear": "2023",
+        "gender": "female"
+    },
+{
+        "name": "Natt",
+        "group": "Empress",
+        "role": "vocal",
+        "company": "Rising Entertainment",
+        "album": "0",
+        "debutyear": "2023",
+        "gender": "female"
+    },
+{
+        "name": "Carys",
+        "group": "Empress",
+        "role": "dancer",
+        "company": "Rising Entertainment",
+        "album": "0",
+        "debutyear": "2023",
+        "gender": "female"
+    },
+{
+        "name": "Tonkhao",
+        "group": "Empress",
+        "role": "visual",
+        "company": "Rising Entertainment",
+        "album": "0",
+        "debutyear": "2023",
+        "gender": "female"
+    },
+{
+        "name": "Tawan",
+        "group": "Empress",
+        "role": "maknae",
+        "company": "Rising Entertainment",
+        "album": "0",
+        "debutyear": "2023",
+        "gender": "female"
     }
 ]
