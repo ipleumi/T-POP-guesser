@@ -420,5 +420,59 @@
         "album": "0",
         "debutyear": "2023",
         "gender": "female"
+    },
+    {
+        "name": "Nont Tanont",
+        "group": "Solo",
+        "role": "singer",
+        "company": "LOVEiS Entertainment",
+        "album": "1",
+        "debutyear": "2013",
+        "gender":"male"
+    },
+    {
+        "name": "BOWKYLION",
+        "group": "Solo",
+        "role": "singer",
+        "company": "What The Duck",
+        "album": "1",
+        "debutyear": "2017",
+        "gender":"female"
+    },
+    {
+        "name": "Potay",
+        "group": "MEAN",
+        "role": "singer",
+        "company": "LOVEiS Entertainment",
+        "album": "1",
+        "debutyear": "2017",
+        "gender":"male"
+    },
+    {
+        "name": "Pat",
+        "group": "MEAN",
+        "role": "guitar,rapper",
+        "company": "LOVEiS Entertainment",
+        "album": "1",
+        "debutyear": "2017",
+        "gender":"male"
+    },
+    {
+        "name": "Gun",
+        "group": "MEAN",
+        "role": "drum",
+        "company": "LOVEiS Entertainment",
+        "album": "1",
+        "debutyear": "2017",
+        "gender":"male"
+    },
+    {
+        "name": "Palm",
+        "group": "MEAN",
+        "role": "keyboard",
+        "company": "LOVEiS Entertainment",
+        "album": "1",
+        "debutyear": "2017",
+        "gender":"male"
     }
 ]

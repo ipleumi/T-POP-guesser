@@ -387,6 +387,12 @@ document.addEventListener('DOMContentLoaded', () => {
             Rising Entertainment: <br>
             Empress <br>
             <br>
+            LOVEiS Entertainment: <br>
+            NontTanon , MEAN <br>
+            <br>
+            What The Duck: <br>
+            BOWKYLION<br>
+            <br>
         `;
         return content;
 
