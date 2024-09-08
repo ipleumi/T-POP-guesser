@@ -227,15 +227,26 @@ function checkAnswer(guessedName) {
         }
 
         // Check if the guessed role is correct
-        //check the role cell has part of the answer role
+        
         if (guessedItem.role.toLowerCase() === answerItem.role.toLowerCase()){
             roleCell.style.backgroundColor = '#1ff800'; // Change only the role cell's background color
         }    
-        //check the role cell has the same role as the answer role
         else if(guessedItem.role.toLowerCase().includes(answerItem.role.toLowerCase())){
             roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
         }
         else if(answerItem.role.toLowerCase().includes(guessedItem.role.toLowerCase())){
+            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+        }
+        else if(guessedItem.role.toLowerCase().includes(answerItem.role.toLowerCase().split(",")[0])){
+            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+        }
+        else if(guessedItem.role.toLowerCase().includes(answerItem.role.toLowerCase().split(",")[1])){
+            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+        }
+        else if(answerItem.role.toLowerCase().includes(guessedItem.role.toLowerCase().split(",")[0])){
+            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+        }
+        else if(answerItem.role.toLowerCase().includes(guessedItem.role.toLowerCase().split(",")[1])){
             roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
         }
         else {
@@ -253,12 +264,12 @@ function resetGame() {
     const tableBody = document.querySelector('table tbody');
     tableBody.innerHTML = `
         <tr>
-            <th>Name</th>
-            <th>Group</th>
-            <th>Role</th>
-            <th>Company</th>
-            <th>Album</th>
-            <th>Debut Year</th>
+            <th>NAME</th>
+            <th>GROUP<button id="infoButton" class="info-button"style="float: left;">i</button></th>
+            <th>ROLE</th>
+            <th>COMPANY</th>
+            <th>ALBUM</th>
+            <th>DEBUT YEAR</th>
             <th>GENDER</th>
         </tr>
     `;
@@ -287,3 +298,47 @@ function showTutorial() {
 function closeTutorial() {
     document.getElementById('tutorialModal').style.display = 'none';
 }
+
+// Close info modal
+function closeInfoModal() {
+    document.getElementById('infoModal').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const infoButton = document.getElementById('infoButton');
+    const infoModal = document.getElementById('infoModal');
+    const closeModal = document.querySelector('.modal .close');
+    const infoContent = document.getElementById('infoContent');
+
+    infoButton.addEventListener('click', () => {
+        // Populate the modal with all information
+        infoContent.innerHTML = generateInfoContent();
+        infoModal.style.display = 'block';
+    });
+
+    closeModal.addEventListener('click', () => {
+        infoModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === infoModal) {
+            infoModal.style.display = 'none';
+        }
+    });
+
+    function generateInfoContent() {
+        let content = `genelab: <br>
+            Threemandown , TillyBirds <br>
+            <br>
+            LIT Entertainment: <br>
+            PiXXiE <br>
+            <br>
+            XOXO Entertainment: <br>
+            4EVE <br>
+            <br>
+            Independent Record: <br>
+            Qrra<br>
+        `;
+        return content;
+    }
+});

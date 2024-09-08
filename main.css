@@ -130,6 +130,10 @@ th {
     font-weight: bold;
     padding: 12px;
     text-transform: uppercase;
+    text-align: center ;
+    /* make in middle in box */
+    vertical-align: middle;
+    
 }
 
 /* Table body styling */
@@ -255,6 +259,25 @@ tr:hover {
 }
 
 .popup button:hover {
+    background-color: #1998a9;
+}
+/* styling info button */
+.info-button {
+    background-color: #2fc8ee;
+    color: white;
+    border: none;
+    width: 40px; /* Set width */
+    height: 40px; /* Set height */
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-button:hover {
     background-color: #1998a9;
 }
 
