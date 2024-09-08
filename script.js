@@ -284,7 +284,7 @@ function resetGame() {
     tableBody.innerHTML = `
         <tr>
             <th>NAME</th>
-            <th>GROUP<button id="infoButton" class="info-button"style="float: right;">i</button></th>
+            <th>GROUP<button id="infoButton" onclick="openInfoModal()" class="info-button"style="float: right;">i</button></th>
             <th>ROLE</th>
             <th>COMPANY</th>
             <th>ALBUM</th>
@@ -323,6 +323,11 @@ function closeInfoModal() {
     document.getElementById('infoModal').style.display = 'none';
 }
 
+//open info modal
+function openInfoModal() {
+    document.getElementById('infoModal').style.display = 'block';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const infoButton = document.getElementById('infoButton');
     const infoModal = document.getElementById('infoModal');
@@ -353,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
             PiXXiE <br>
             <br>
             XOXO Entertainment: <br>
-            4EVE <br>
+            4EVE , ATLAS<br>
             <br>
             Independent Record: <br>
             Qrra<br>

@@ -303,5 +303,68 @@
         "album": "1",
         "debutyear": "2023",
         "gender": "male"
+    },
+    {
+        "name": "Junior",
+        "group": "ATLAS",
+        "role": "dancer,visual",
+        "company": "XOXO Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender":"male"
+    },
+    {
+        "name": "Poom",
+        "group": "ATLAS",
+        "role": "vocal",
+        "company": "XOXO Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender":"male"
+    },
+    {
+        "name": "Jet",
+        "group": "ATLAS",
+        "role": "vocal,dancer",
+        "company": "XOXO Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender":"male"
+    },
+    {
+        "name": "Nice",
+        "group": "ATLAS",
+        "role": "dancer",
+        "company": "XOXO Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender":"male"
+    },
+    {
+        "name": "Erwin",
+        "group": "ATLAS",
+        "role": "vocal,rapper",
+        "company": "XOXO Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender":"male"
+    },
+    {
+        "name": "Muon",
+        "group": "ATLAS",
+        "role": "vocal,dancer",
+        "company": "XOXO Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender":"male"
+    },
+    {
+        "name": "Tad",
+        "group": "ATLAS",
+        "role": "visual",
+        "company": "XOXO Entertainment",
+        "album": "2",
+        "debutyear": "2021",
+        "gender":"male"
     }
 ]
