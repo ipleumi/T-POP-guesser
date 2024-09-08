@@ -195,5 +195,113 @@
         "album": "1",
         "debutyear": "2022",
         "gender": "female"
+    },
+    {
+        "name": "Marckris",
+        "group": "BUS,BUS5",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Copper",
+        "group": "BUS,BUS7",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Aa",
+        "group": "BUS,BUS7",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Phutatchai",
+        "group": "BUS,BUS5",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Khunpol",
+        "group": "BUS,BUS7",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Heart",
+        "group": "BUS,BUS5",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Peemwasu",
+        "group": "BUS,BUS7",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Alan",
+        "group": "BUS,BUS7",
+        "role":"vocal,dancer,leader",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Nex",
+        "group": "BUS,BUS7",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Thai",
+        "group": "BUS,BUS7",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Jungt",
+        "group": "BUS,BUS5",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
+    },
+{
+        "name": "Jinwook",
+        "group": "BUS,BUS5",
+        "role": "vocal,dancer",
+        "company": "Sonray Music",
+        "album": "1",
+        "debutyear": "2023",
+        "gender": "male"
     }
 ]

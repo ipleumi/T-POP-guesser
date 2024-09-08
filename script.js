@@ -162,6 +162,7 @@ function checkAnswer(guessedName) {
     if (guessedItem && guessedItem.name.toLowerCase() === answer.toLowerCase()) {
         document.querySelector('.result').textContent = 'Correct!';
         showPopup('win');
+        resetGame();
     } else {
         document.querySelector('.result').textContent = 'Incorrect! Try again.';
         
@@ -188,7 +189,25 @@ function checkAnswer(guessedName) {
 
         if (guessedItem.group.toLowerCase() === answerItem.group.toLowerCase()) {
             groupCell.style.backgroundColor = '#1ff800'; // Change only the group cell's background color
-        } else {
+        }else if(guessedItem.group.toLowerCase().includes(answerItem.group.toLowerCase())){
+            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+        }
+        else if(answerItem.group.toLowerCase().includes(guessedItem.group.toLowerCase())){
+            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+        }
+        else if(guessedItem.group.toLowerCase().includes(answerItem.group.toLowerCase().split(",")[0])){
+            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+        }
+        else if(guessedItem.group.toLowerCase().includes(answerItem.group.toLowerCase().split(",")[1])){
+            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+        }
+        else if(answerItem.group.toLowerCase().includes(guessedItem.group.toLowerCase().split(",")[0])){
+            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+        }
+        else if(answerItem.group.toLowerCase().includes(guessedItem.group.toLowerCase().split(",")[1])){
+            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+        } 
+        else {
             groupCell.style.backgroundColor = ''; // Reset the group cell's background color
         }
 
@@ -265,7 +284,7 @@ function resetGame() {
     tableBody.innerHTML = `
         <tr>
             <th>NAME</th>
-            <th>GROUP<button id="infoButton" class="info-button"style="float: left;">i</button></th>
+            <th>GROUP<button id="infoButton" class="info-button"style="float: right;">i</button></th>
             <th>ROLE</th>
             <th>COMPANY</th>
             <th>ALBUM</th>
@@ -338,6 +357,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <br>
             Independent Record: <br>
             Qrra<br>
+            <br>
+            Sonray Music: <br>
+            BUS5 , BUS7<br>
+            <br>
         `;
         return content;
     }
