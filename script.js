@@ -183,43 +183,53 @@ function checkAnswer(guessedName) {
 
     if (nameCell && nameCell.textContent.toLowerCase() === guessedName.toLowerCase()) {
         if (guessedItem.name.toLowerCase() === answerItem.name.toLowerCase()) {
-            nameCell.style.backgroundColor = '#1ff800'; // Change only the name cell's background color
+            nameCell.style.color = 'black';
+            nameCell.style.backgroundColor = '#3aca85'; // Change only the name cell's background color
         } else {
             nameCell.style.backgroundColor = ''; // Reset the name cell's background color
         }
 
         if (guessedItem.group.toLowerCase() === answerItem.group.toLowerCase()) {
-            groupCell.style.backgroundColor = '#1ff800'; // Change only the group cell's background color
+            groupCell.style.color = 'black';
+            groupCell.style.backgroundColor = '#3aca85'; // Change only the group cell's background color
         }else if(guessedItem.group.toLowerCase().includes(answerItem.group.toLowerCase())){
-            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+             groupCell.style.color = 'black';
+            groupCell.style.backgroundColor = '#f1f446'; // Change only the group cell's background color
         }
         else if(answerItem.group.toLowerCase().includes(guessedItem.group.toLowerCase())){
-            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+             groupCell.style.color = 'black';
+            groupCell.style.backgroundColor = '#f1f446'; // Change only the group cell's background color
         }
         else if(guessedItem.group.toLowerCase().includes(answerItem.group.toLowerCase().split(",")[0])){
-            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+             groupCell.style.color = 'black';
+            groupCell.style.backgroundColor = '#f1f446'; // Change only the group cell's background color
         }
         else if(guessedItem.group.toLowerCase().includes(answerItem.group.toLowerCase().split(",")[1])){
-            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+             groupCell.style.color = 'black';
+            groupCell.style.backgroundColor = '#f1f446'; // Change only the group cell's background color
         }
         else if(answerItem.group.toLowerCase().includes(guessedItem.group.toLowerCase().split(",")[0])){
-            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+             groupCell.style.color = 'black';
+            groupCell.style.backgroundColor = '#f1f446'; // Change only the group cell's background color
         }
         else if(answerItem.group.toLowerCase().includes(guessedItem.group.toLowerCase().split(",")[1])){
-            groupCell.style.backgroundColor = 'yellow'; // Change only the group cell's background color
+             groupCell.style.color = 'black';
+            groupCell.style.backgroundColor = '#f1f446'; // Change only the group cell's background color
         } 
         else {
             groupCell.style.backgroundColor = ''; // Reset the group cell's background color
         }
 
         if (guessedItem.company.toLowerCase() === answerItem.company.toLowerCase()) {
-            companyCell.style.backgroundColor = '#1ff800'; // Change only the company cell's background color
+            companyCell.style.color = 'black';
+            companyCell.style.backgroundColor = '#3aca85'; // Change only the company cell's background color
         } else {
             companyCell.style.backgroundColor = ''; // Reset the company cell's background color
         }
 
         if (guessedItem.gender.toLowerCase() === answerItem.gender.toLowerCase()) {
-            genderCell.style.backgroundColor = '#1ff800'; // Change only the gender cell's background color
+            genderCell.style.color = 'black';
+            genderCell.style.backgroundColor = '#3aca85'; // Change only the gender cell's background color
         } else {
             genderCell.style.backgroundColor = ''; // Reset the gender cell's background color
         }
@@ -228,9 +238,11 @@ function checkAnswer(guessedName) {
         const answerAlbumCount = parseInt(answerItem.album);
 
         if (guessedAlbumCount === answerAlbumCount) {
-            albumCell.style.backgroundColor = '#1ff800'; // Change only the album cell's background color to green if correct
+            albumCell.style.color = 'black';
+            albumCell.style.backgroundColor = '#3aca85'; // Change only the album cell's background color to green if correct
         } else if (Math.abs(guessedAlbumCount - answerAlbumCount) <= 2) {
-            albumCell.style.backgroundColor = 'yellow'; // Change only the album cell's background color to yellow if within range
+            albumCell.style.backgroundColor = '#f1f446'; // Change only the album cell's background color to #f1f446 if within range
+            albumCell.style.color = 'black';
         } else {
             albumCell.style.backgroundColor = ''; // Reset the album cell's background color
         }
@@ -239,9 +251,12 @@ function checkAnswer(guessedName) {
         const answerDebutYear = parseInt(answerItem.debutyear);
 
         if (guessedDebutYear === answerDebutYear) {
-            debutYearCell.style.backgroundColor = '#1ff800'; // Change only the debut year cell's background color to green if correct
+            debutYearCell.style.color = 'black';
+            debutYearCell.style.backgroundColor = '#3aca85'; // Change only the debut year cell's background color to green if correct
         } else if (Math.abs(guessedDebutYear - answerDebutYear) <= 2) {
-            debutYearCell.style.backgroundColor = 'yellow'; // Change only the debut year cell's background color to yellow if within range
+            
+            debutYearCell.style.color = 'black';
+            debutYearCell.style.backgroundColor = '#f1f446'; // Change only the debut year cell's background color to #f1f446 if within range
         } else {
             debutYearCell.style.backgroundColor = ''; // Reset the debut year cell's background color
         }
@@ -249,33 +264,42 @@ function checkAnswer(guessedName) {
         // Check if the guessed role is correct
         
         if (guessedItem.role.toLowerCase() === answerItem.role.toLowerCase()){
-            roleCell.style.backgroundColor = '#1ff800'; // Change only the role cell's background color
+            roleCell.style.color = 'black';
+            roleCell.style.backgroundColor = '#3aca85'; // Change only the role cell's background color
         }    
         else if(guessedItem.role.toLowerCase().includes(answerItem.role.toLowerCase())){
-            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+            roleCell.style.backgroundColor = '#f1f446'; // Change only the role cell's background color
+            roleCell.style.color = 'black';
         }
         else if(answerItem.role.toLowerCase().includes(guessedItem.role.toLowerCase())){
-            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+            roleCell.style.color = 'black';
+            roleCell.style.backgroundColor = '#f1f446'; // Change only the role cell's background color
         }
         else if(guessedItem.role.toLowerCase().includes(answerItem.role.toLowerCase().split(",")[0])){
-            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+            roleCell.style.color = 'black';
+            roleCell.style.backgroundColor = '#f1f446'; // Change only the role cell's background color
         }
         else if(guessedItem.role.toLowerCase().includes(answerItem.role.toLowerCase().split(",")[1])){
-            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+            roleCell.style.color = 'black';
+            roleCell.style.backgroundColor = '#f1f446'; // Change only the role cell's background color
         }
         else if(answerItem.role.toLowerCase().includes(guessedItem.role.toLowerCase().split(",")[0])){
-            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+            roleCell.style.color = 'black';
+            roleCell.style.backgroundColor = '#f1f446'; // Change only the role cell's background color
         }
         else if(answerItem.role.toLowerCase().includes(guessedItem.role.toLowerCase().split(",")[1])){
-            roleCell.style.backgroundColor = 'yellow'; // Change only the role cell's background color
+            roleCell.style.color = 'black';
+            roleCell.style.backgroundColor = '#f1f446'; // Change only the role cell's background color
         }
         else {
             roleCell.style.backgroundColor = ''; // Reset the role cell's background color
+
         }  
     }
 });
 
 }
+
 
 // Function to reset the game
 function resetGame() {
@@ -338,6 +362,11 @@ function validateInput() {
     guessButton.disabled = !isValid; // Disable button if input is invalid or empty
 }
 
+// Function to toggle dark theme
+function toggleDarkTheme() {
+    document.body.classList.toggle('dark-theme');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const infoButton = document.getElementById('infoButton');
     const infoModal = document.getElementById('infoModal');
@@ -370,10 +399,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateInfoContent() {
         let content = `genelab: <br>
-            Threemandown , TillyBirds <br>
+            Threemandown , TillyBirds , TaitosmitH<br>
             <br>
             LIT Entertainment: <br>
-            PiXXiE <br>
+            PiXXiE , bamm <br>
             <br>
             XOXO Entertainment: <br>
             4EVE , ATLAS<br>
@@ -388,10 +417,10 @@ document.addEventListener('DOMContentLoaded', () => {
             Empress <br>
             <br>
             LOVEiS Entertainment: <br>
-            NontTanon , MEAN <br>
+            NontTanont , MEAN <br>
             <br>
             What The Duck: <br>
-            BOWKYLION<br>
+            BOWKYLION , Mirrr , THE TOYS , LANDOKMAI <br>
             <br>
         `;
         return content;

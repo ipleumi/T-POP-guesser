@@ -193,7 +193,7 @@ tr:hover {
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #ffffff;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
@@ -262,7 +262,7 @@ tr:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: rgb(158, 158, 158); /* Change background color to grey */
     padding: 20px;
     border: 2px solid #ccc;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -307,6 +307,61 @@ tr:hover {
 
 .info-button:hover {
     background-color: #1998a9;
+}
+
+/* Dark theme styles */
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-theme .menubox {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-theme .table th, .dark-theme .table td {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+.dark-theme .answer-input {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+.dark-theme .submit-answer {
+    background-color: #555555;
+    color: #ffffff;
+}
+
+.dark-theme .submit-answer:hover {
+    background-color: #777777;
+}
+
+.dark-theme .info-button {
+    background-color: #555555;
+    color: #ffffff;
+}
+
+.dark-theme .info-button:hover {
+    background-color: #777777;
+}
+
+.dark-theme .modal-content {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-theme .search-results {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+.dark-theme .search-result-item:hover {
+    background-color: #555555;
 }
 
 /* Responsive styles */
