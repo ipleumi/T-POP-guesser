@@ -27,6 +27,7 @@ fetch('db.json')
         document.addEventListener('DOMContentLoaded', () => {
             updateGuessesLeft();
             displayDataInTable();
+            infoContent.innerHTML = generateInfoContent();
             document.querySelector('.close').addEventListener('click', closeTutorial); // Move this line inside DOMContentLoaded
         });
     });
@@ -330,7 +331,7 @@ function resetGame() {
 
     // clear the result message
     document.querySelector('.result').textContent = '';
-    generateInfoContent()
+    infoContent.innerHTML = generateInfoContent();
 }
 
 // Show tutorial
