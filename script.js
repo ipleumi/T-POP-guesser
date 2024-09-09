@@ -58,7 +58,7 @@ function searchName() {
 
     if (searchInput) {
         const matches = data.filter(item => 
-            item.name.toLowerCase().includes(searchInput) && !selectedNames.includes(item.name)
+            item.group.toLowerCase().includes(searchInput) | item.name.toLowerCase().includes(searchInput) && !selectedNames.includes(item.name)
         );
         matches.forEach(match => {
             const div = document.createElement('div');
@@ -128,18 +128,21 @@ function showPopup(result) {
     const popup = document.createElement('div');
     popup.classList.add('popup');
     const timeTaken = 10 - guessesLeft; // Calculate the number of guesses taken
+    
 
     if (result === 'win') {
         popup.innerHTML = `
             <h2>Congratulations!</h2>
-            <p>You guessed the correct answer: ${answer}</p>
+            <p>You guessed the correct answer : ${answer}</p>
             <p>You use ${timeTaken} guesses.</p>
             <button onclick="closePopup()">Close</button>
+            <button class="icon" onclick="shareResultTwitter()"><img src="src/x.png" width="22" height="22"></button>        
         `;
+        document.querySelector('.resultContent').textContent ="I guessed the correct answer : "+answer+"\nin "+timeTaken+" guesses. \n\n\n#GuessTheT-PopIdol";
     } else {
         popup.innerHTML = `
             <h2>Game Over!</h2>
-            <p>The correct answer was: ${answer}</p>
+            <p>The correct answer was : ${answer}</p>
             <p>You used all your guesses.</p>
             <button onclick="closePopup()">Close</button>
         `;
@@ -154,6 +157,16 @@ function closePopup() {
     if (popup) {
         popup.remove();
     }
+}
+
+function shareResultTwitter() {
+    const resultMessage = document.querySelector('.resultContent').textContent;
+    const shareText = encodeURIComponent(resultMessage);
+    const shareUrl = encodeURIComponent(window.location.href);
+
+    // Share on Twitter
+    const twitterUrl = `https://x.com/intent/post?text=${shareText} ${shareUrl}`;
+    window.open(twitterUrl, '_blank');
 }
 
 //create function to  check if the guessed name is correct

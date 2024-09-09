@@ -9,6 +9,12 @@
 <body>
     <script src="script.js"></script>
 
+    <div id="resultMessage" class="modal">
+        <div class="hidecontent">
+            <p class="resultContent"></p>
+        </div>
+    </div>
+
     <div id="tutorialModal" class="modal">
         <div class="modal-content">
             <span onclick="closeTutorial()" class="close">close</span>
@@ -52,7 +58,7 @@
         
         <div class="answerbox">
             <div class="answer">
-                <input type="text" class="answer-input" placeholder="Enter Name Here..." oninput="searchName() , validateInput()">
+                <input type="text" class="answer-input" placeholder="Enter Name Or Group Here..." oninput="searchName() , validateInput()">
                 <div class="search-results"></div>
                 <button type="button" class="submit-answer" onclick="submitAnswer(), validateInput()">Guess</button>
             </div>
@@ -90,7 +96,7 @@
         
         <div class="footer">
             <p>Created by iPLEUMi</p>
-            <p>Version 1.1.1</p>
+            <p>Version 1.1.5</p>
             <div class="footer-links">
                 <a href="https://github.com/ipleumi" class="footer-link">
                     <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="footer-icon">

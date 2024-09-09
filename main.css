@@ -176,7 +176,12 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #ddd;
 }
-
+.icon{
+    size: auto;
+}
+.hidecontent {
+    display: none;
+}
 /* Modal styles */
 .modal {
     display: none; /* Hidden by default */
