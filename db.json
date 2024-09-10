@@ -564,5 +564,53 @@
         "album": "2",
         "debutyear": "2018",
         "gender": "male"
+    },{
+        "name": "Tee",
+        "group": "Only Monday",
+        "role": "singer,guitar",
+        "company": "genelab",
+        "album": "1",
+        "debutyear": "2020",
+        "gender": "male"
+    },{
+        "name": "Prod",
+        "group": "Only Monday",
+        "role": "bass",
+        "company": "genelab",
+        "album": "1",
+        "debutyear": "2020",
+        "gender": "male"
+    },{
+        "name": "Frame",
+        "group": "Only Monday",
+        "role": "drum",
+        "company": "genelab",
+        "album": "1",
+        "debutyear": "2020",
+        "gender": "male"
+    },{
+        "name": "Jeff Satur",
+        "group": "Solo",
+        "role": "singer,guitar",
+        "company": "Wayfer Records",
+        "album": "1",
+        "debutyear": "2013",
+        "gender": "male"
+    },{
+        "name": "Pun",
+        "group": "LUSS",
+        "role": "Vocal",
+        "company": "Wayfer Records",
+        "album": "1",
+        "debutyear": "2018",
+        "gender": "male"
+    },{
+        "name": "Ben",
+        "group": "LUSS",
+        "role": "Vocal,Producer",
+        "company": "Wayfer Records",
+        "album": "1",
+        "debutyear": "2018",
+        "gender": "male"
     }
 ]

@@ -131,6 +131,7 @@ function showPopup(result) {
     
 
     if (result === 'win') {
+        document.querySelector('.resultContent').textContent ="I guessed the correct answer : "+answer+"\nin "+timeTaken+" Times. \n\n#TpopGuesser \n";
         popup.innerHTML = `
             <h2>Congratulations!</h2>
             <p>You guessed the correct answer : ${answer}</p>
@@ -138,7 +139,6 @@ function showPopup(result) {
             <button onclick="closePopup()">Close</button>
             <button class="icon" onclick="shareResultTwitter()"><img src="src/x.png" width="22" height="22"></button>        
         `;
-        document.querySelector('.resultContent').textContent ="I guessed the correct answer : "+answer+"\nin "+timeTaken+" guesses. \n\n\n#GuessTheT-PopIdol";
     } else {
         popup.innerHTML = `
             <h2>Game Over!</h2>
@@ -165,7 +165,7 @@ function shareResultTwitter() {
     const shareUrl = encodeURIComponent(window.location.href);
 
     // Share on Twitter
-    const twitterUrl = `https://x.com/intent/post?text=${shareText} ${shareUrl}`;
+    const twitterUrl = `http://twitter.com/share?text=${shareText}&url=${shareUrl}`;
     window.open(twitterUrl, '_blank');
 }
 
@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateInfoContent() {
         let content = `genelab: <br>
-            Threemandown , TillyBirds , TaitosmitH<br>
+            Threemandown , TillyBirds , TaitosmitH , Only Monday<br>
             <br>
             LIT Entertainment: <br>
             PiXXiE , bamm <br>
@@ -423,6 +423,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <br>
             Independent Records: <br>
             Qrra<br>
+            <br>
+            Wayfer Records: <br>
+            Jeff Satur , LUSS<br>
             <br>
             Sonray Music: <br>
             BUS5 , BUS7<br>
